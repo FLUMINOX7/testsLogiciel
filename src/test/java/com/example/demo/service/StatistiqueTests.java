@@ -27,7 +27,7 @@ public class StatistiqueTests {
 
         statistiqueImpl.ajouter(new Voiture("McFlurry",2000));
 
-        when.(statistiqueImpl.prixMoyen()).thenReturn(new Echantillon(1,2000));
+        when(statistiqueImpl.prixMoyen()).thenReturn(new Echantillon(1,2000));
 
     }
 
