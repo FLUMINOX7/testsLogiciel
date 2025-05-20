@@ -45,7 +45,6 @@ class WebTests {
     public void testCreerVoiture()throws Exception {
 
         mockMvc.perform(post("/voiture"))
-            .contentType(MediaType.APPLICATION_JSON)
             .content("{\"nom\":\"McQueen\",\"prix\":7000}")
             .accept(MediaType.APPLICATION_JSON)
             .andDo(print())
