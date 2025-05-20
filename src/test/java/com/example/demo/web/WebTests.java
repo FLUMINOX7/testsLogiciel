@@ -44,9 +44,10 @@ class WebTests {
     @Test
     public void testCreerVoiture()throws Exception {
 
-        mockMvc.perform(post("/voiture"))
+        mockMvc.perform(post("/voiture")
+            .contentType(MediaType.APPLICATION_JSON)
             .content("{\"nom\":\"McQueen\",\"prix\":7000}")
-            .accept(MediaType.APPLICATION_JSON)
+            .accept(MediaType.APPLICATION_JSON))
             .andDo(print())
             .andExpect(status().isOk());
             
