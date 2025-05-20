@@ -33,6 +33,7 @@ class WebTests {
         doNothing().when(statistiqueImpl).ajouter(new Voiture("McQueen", 7000));
         when(statistiqueImpl.prixMoyen()).thenReturn(new Echantillon(1,7000));
         mockMvc.perform(get("/statistique"))
+                /* modificaion des except en expect*/
             .andDo(print())
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.nombreDeVoitures").value("1"))
@@ -40,7 +41,7 @@ class WebTests {
             .andReturn();
 
     }
-    
+
     @Test
     public void testCreerVoiture()throws Exception {
 
